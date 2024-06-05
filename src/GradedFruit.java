@@ -10,6 +10,7 @@ public class GradedFruit extends Fruit {
         this.rating = rating;
     }
 
+
     @Override
     public double getPrice() {
         return super.getPrice() * rating;
@@ -19,15 +20,15 @@ public class GradedFruit extends Fruit {
     public String toString(){
         return "(" + getType() + "," + super.getPrice()+ "," + this.getPrice() + ")";
     }
-    public double getRating() {
-        return this.rating;
-    }
-
-    public void setRating(double newRating) {
-        this.rating = newRating;
-    }
+//    public double getRating() {
+//        return this.rating;
+//    }
+//
+//    public void setRating(double newRating) {
+//        this.rating = newRating;
+//    }
 }
 
 
 
-}
+
