@@ -20,6 +20,7 @@ public class Review implements Comparable<Review> {
         this.likes = 0;
     }
 
+    @Override
     public String toString() {
         return this.item + " (" + this.rating + "): " +
                 this.text + "; likes = " + this.likes;

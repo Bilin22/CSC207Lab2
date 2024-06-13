@@ -22,7 +22,7 @@ public class Monster {
        accumulate a value together.  Below, we define a class variable called
        "population", that will be incremented by one every time a constructor
        is called to create a new Monster.  If this were not a class variable,
-       every instance would have its own "population", each with the the
+       every instance would have its own "population", each with the
        value 1 -- not very useful!
 
        We indicate that a variable is class variable by using the keyword
@@ -106,20 +106,20 @@ public class Monster {
      */
     public Monster(String name, int size, int bellyCapacity) {
 
-/* Using "this" to access an instance variable
+        /* Using "this" to access an instance variable
 
-"this" is like "self" in Python. The value of "this" is the address
-of the object whose method has been called.
+        "this" is like "self" in Python. The value of "this" is the address
+        of the object whose method has been called.
 
-Below, to refer to the "size" instance variable, we *had to* prefix
-its name with "this"; otherwise Java would think we were referring
-to the more locally defined "size" -- the parameter to this method.
-But we could have said simply "fullness" and Java would have found
-the instance variable "fullness", as desired. It's good practise,
-however, to use the "this" prefix anyway. That way, if we later
-add a parameter called fullness, the code will still work.
-XXX agreed?
-*/
+        Below, to refer to the "size" instance variable, we *had to* prefix
+        its name with "this"; otherwise Java would think we were referring
+        to the more locally defined "size" -- the parameter to this method.
+        But we could have said simply "fullness" and Java would have found
+        the instance variable "fullness", as desired. It's good practise,
+        however, to use the "this" prefix anyway. That way, if we later
+        add a parameter called fullness, the code will still work.
+        XXX agreed?
+        */
 
         this.size = size;
         this.name = name;
@@ -133,48 +133,48 @@ XXX agreed?
      */
     public Monster() {
 
-    /* Using this to call another constructor
+        /* Using this to call another constructor
 
-    We need to set the instance variables and update the static
-    population just as in the other constructor, but with default values.
-    We could do that like so:
-    this.size = 10;
-    this.name = "Monster" + String.valueOf(population);
-    this.belly = new Monster[3];
-    this.fullness = 0;
-    this.population += 1;
-    But the other constructor already knows how to do all of this,
-    if we provide the necessary arguments. It's better style to call
-    that constructor to do the work. That way, if there ever
-    is any change made to the code, it only has to happen in one
-    place. Any time we duplicate code, we are at risk of having some
-    future update occur in only one place, leaving the code
-    inconsistent.
+        We need to set the instance variables and update the static
+        population just as in the other constructor, but with default values.
+        We could do that like so:
+        this.size = 10;
+        this.name = "Monster" + String.valueOf(population);
+        this.belly = new Monster[3];
+        this.fullness = 0;
+        this.population += 1;
+        But the other constructor already knows how to do all of this,
+        if we provide the necessary arguments. It's better style to call
+        that constructor to do the work. That way, if there ever
+        is any change made to the code, it only has to happen in one
+        place. Any time we duplicate code, we are at risk of having some
+        future update occur in only one place, leaving the code
+        inconsistent.
 
-    To call another constructor, we use "this" as shown below. Such a
-    call is termed an "explicit constructor invocation". If we have one,
-    it must occur on the very first line of the method.
-    */
+        To call another constructor, we use "this" as shown below. Such a
+        call is termed an "explicit constructor invocation". If we have one,
+        it must occur on the very first line of the method.
+        */
 
         this("Monster" + String.valueOf(population), 10, 3);
     }
 
-/* No-arg constructors
+    /* No-arg constructors
 
-If you don't define any constructors, the compiler supplies one with
-no parameters and no body. (We call this a "no-arg" constructor.)
-When an instance of your class is constructed using "new" with
-no arguments, this no-arg constructor is called. Of course it does
-nothing, since it has no body, but it means that the "new" statement
-compiles and runs.
+    If you don't define any constructors, the compiler supplies one with
+    no parameters and no body. (We call this a "no-arg" constructor.)
+    When an instance of your class is constructed using "new" with
+    no arguments, this no-arg constructor is called. Of course it does
+    nothing, since it has no body, but it means that the "new" statement
+    compiles and runs.
 
-If you define any constructor for a class, the compiler will no longer
-supply the default no-arg constructor. If you don't define one either,
-then a use of "new" with no arguments will fail to compile. In our code,
-since we have a constructor with arguments, if we didn't also provide
-a no-arg constructor, then this line would not compile:
-Monster m4 = new Monster();
-*/
+    If you define any constructor for a class, the compiler will no longer
+    supply the default no-arg constructor. If you don't define one either,
+    then a use of "new" with no arguments will fail to compile. In our code,
+    since we have a constructor with arguments, if we didn't also provide
+    a no-arg constructor, then this line would not compile:
+    Monster m4 = new Monster();
+    */
     // === Regular methods ===
 
     /* Defining methods
